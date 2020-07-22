@@ -20,7 +20,93 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="35df66f8-bdfd-4f1c-a33f-4087d64b3b83" name="默认更改列表" comment="">
-      <change afterPath="$PROJECT_DIR$/detail.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitlab-ci.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/404-en.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/404-it.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/article-author-bio-small.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/footer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/get-page-url.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/get-post-url.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/go-to-home-page.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/language-meta-link.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/language-selector.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/list-category-posts.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/page-title.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/post-meta-info.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/read-time.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/site-header.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/social-metatags.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_layouts/category.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_layouts/default.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_layouts/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_layouts/page.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_layouts/post.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_layouts/rss-feed.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_posts/articles/en/2017-08-21-post-example-in-english.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_posts/articles/en/2017-10-10-example-repository-page.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_posts/articles/it/2017-08-21-esempio-di-post-in-italiano.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_posts/articles/it/2017-10-10-esempio-pagina-repository.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_posts/projects/en/2017-10-11-example-project-page.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_posts/projects/it/2017-10-11-esempio-categoria-pagina.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_sass/blog.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_sass/blog/_base.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_sass/blog/_extra.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_sass/blog/_layout.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_sass/jekyll-theme-simple-blog.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_sass/normalize.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_sass/rouge-github.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_sass/variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/about-en.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/about-it.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/style.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/en.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/home-header.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/it.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/profile-225.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/profile-60.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/patterns/404.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/patterns/asanoha-400px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/patterns/contemporary_china.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/patterns/contemporary_china_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/patterns/new_year_background.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/patterns/paisley.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/patterns/readme.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/patterns/sayagata-400px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/patterns/seigaiha.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/patterns/swirl_pattern.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/patterns/symphony.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/patterns/upfeathers.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/patterns/wov.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/contact-en.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/contact-it.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feed-en.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feed-it.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index-en.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index-it.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jekyll-theme-simple-blog.gemspec" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/now-en.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/now-it.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projects-en.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projects-it.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/script/bootstrap" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/script/cibuild" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/script/release" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/script/server" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simple-blog-theme.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sitemaps.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Mateguo1.github.io.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.md" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +144,7 @@
       <updated>1595423587133</updated>
       <workItem from="1595423598942" duration="1166000" />
       <workItem from="1595424888045" duration="91000" />
-      <workItem from="1595425483621" duration="35000" />
+      <workItem from="1595425483621" duration="968000" />
     </task>
     <servers />
   </component>
