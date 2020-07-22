@@ -20,93 +20,118 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="35df66f8-bdfd-4f1c-a33f-4087d64b3b83" name="默认更改列表" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitlab-ci.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/404-en.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/404-it.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_includes/article-author-bio-small.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_includes/footer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_includes/get-page-url.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_includes/get-post-url.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_includes/go-to-home-page.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_includes/language-meta-link.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_includes/language-selector.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_includes/list-category-posts.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_includes/page-title.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_includes/post-meta-info.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_includes/read-time.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_includes/site-header.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_includes/social-metatags.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_layouts/category.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_layouts/default.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_layouts/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_layouts/page.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_layouts/post.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_layouts/rss-feed.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_posts/articles/en/2017-08-21-post-example-in-english.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_posts/articles/en/2017-10-10-example-repository-page.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_posts/articles/it/2017-08-21-esempio-di-post-in-italiano.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_posts/articles/it/2017-10-10-esempio-pagina-repository.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_posts/projects/en/2017-10-11-example-project-page.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_posts/projects/it/2017-10-11-esempio-categoria-pagina.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_sass/blog.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_sass/blog/_base.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_sass/blog/_extra.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_sass/blog/_layout.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_sass/jekyll-theme-simple-blog.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_sass/normalize.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_sass/rouge-github.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_sass/variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/about-en.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/about-it.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/style.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/img/en.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/img/home-header.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/img/it.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/img/profile-225.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/img/profile-60.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/patterns/404.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/patterns/asanoha-400px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/patterns/contemporary_china.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/patterns/contemporary_china_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/patterns/new_year_background.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/patterns/paisley.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/patterns/readme.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/patterns/sayagata-400px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/patterns/seigaiha.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/patterns/swirl_pattern.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/patterns/symphony.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/patterns/upfeathers.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/patterns/wov.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contact-en.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contact-it.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/feed-en.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/feed-it.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index-en.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index-it.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jekyll-theme-simple-blog.gemspec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/now-en.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/now-it.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projects-en.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projects-it.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/script/bootstrap" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/script/cibuild" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/script/release" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/script/server" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/simple-blog-theme.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sitemaps.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Mateguo1.github.io.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/head.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/image.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/nav.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/page_header.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_includes/post_header.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_posts/2019-05-23-welcome-to-jekyll.markdown" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_posts/2019-06-30-coding-post.markdown" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_sass/_begin.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_sass/_syntax.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_sass/ext/_fonts.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_sass/ext/_normalize.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_sass/ext/_solarized-light.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_sass/theme.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/font/fontello.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/font/fontello.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/font/fontello.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/font/fontello.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/font/fontello.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/picker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/textures/black.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/textures/blue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/textures/green.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/textures/purple.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/textures/red.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/textures/yellow.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screen1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screen2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/texture.gemspec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitlab-ci.yml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/404-en.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/404-it.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/detail.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_includes/article-author-bio-small.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_includes/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/_includes/footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_includes/get-page-url.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_includes/get-post-url.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_includes/go-to-home-page.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_includes/language-meta-link.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_includes/language-selector.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_includes/list-category-posts.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_includes/page-title.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_includes/post-meta-info.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_includes/read-time.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_includes/site-header.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_includes/social-metatags.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_layouts/category.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_layouts/default.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_layouts/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/_layouts/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_layouts/page.html" beforeDir="false" afterPath="$PROJECT_DIR$/_layouts/page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_layouts/post.html" beforeDir="false" afterPath="$PROJECT_DIR$/_layouts/post.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_layouts/rss-feed.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/articles/en/2017-08-21-post-example-in-english.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/articles/en/2017-10-10-example-repository-page.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/articles/it/2017-08-21-esempio-di-post-in-italiano.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/articles/it/2017-10-10-esempio-pagina-repository.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/projects/en/2017-10-11-example-project-page.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/projects/it/2017-10-11-esempio-categoria-pagina.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sass/blog.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sass/blog/_base.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sass/blog/_extra.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sass/blog/_layout.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sass/jekyll-theme-simple-blog.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sass/normalize.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sass/rouge-github.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sass/variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/about-en.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/about-it.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/en.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/home-header.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/it.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/profile-225.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/profile-60.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/patterns/404.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/patterns/asanoha-400px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/patterns/contemporary_china.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/patterns/contemporary_china_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/patterns/new_year_background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/patterns/paisley.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/patterns/readme.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/patterns/sayagata-400px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/patterns/seigaiha.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/patterns/swirl_pattern.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/patterns/symphony.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/patterns/upfeathers.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/patterns/wov.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/contact-en.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/contact-it.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/feed-en.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/feed-it.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index-en.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index-it.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jekyll-theme-simple-blog.gemspec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/now-en.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/now-it.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects-en.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects-it.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/bootstrap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/cibuild" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/release" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/server" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-blog-theme.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sitemaps.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +169,7 @@
       <updated>1595423587133</updated>
       <workItem from="1595423598942" duration="1166000" />
       <workItem from="1595424888045" duration="91000" />
-      <workItem from="1595425483621" duration="968000" />
+      <workItem from="1595425483621" duration="1923000" />
     </task>
     <servers />
   </component>

@@ -1,135 +1,150 @@
-![Jekyll Version](https://img.shields.io/badge/Jekyll-3.1.2-red.svg)
-![Build Status](https://gitlab.com/jekyll-themes/default-bundler/badges/master/build.svg)
+# texture
 
-----
+A configurable jekyll theme for simply beautiful blogs.
 
-View Demo: https://lorepirri.gitlab.io/jekyll-theme-simple-blog/
+**Demo**: [thelehhman.com/texture](https://thelehhman.com/texture)
 
------
-# Simple Blog Theme
-
-*Simple Blog is a Jekyll theme for Gitlab or GitHub Pages. It is based on [Cayman Blog Theme](https://github.com/lorepirri/cayman-blog). You can [preview the theme to see what it looks like](https://lorepirri.gitlab.io/jekyll-theme-simple-blog/), or even [use it today](#install).*
-
-<img src="https://gitlab.com/lorepirri/jekyll-theme-simple-blog/raw/master/simple-blog-theme.png" alt="Thumbnail of jekyll-theme-simple-blog" style="max-width:30%; border: 1px solid grey;"/>
-
-## Features
-
-- Blog
-- Responsive
-- Minimal
-- Multi-language
-- SEO optimized
-- Social buttons (instagram, linkedin, twitter, github, gitlab)
-- RSS feed multi-language
-
-## Install
-
-Simple Blog Theme is 100% compatible with GitLab and GitHub Pages.
-
-### Install as a Fork
-
-1. [Fork the repo](https://gitlab.com/lorepirri/jekyll-theme-simple-blog)
-2. Clone down the repo with one of the two:
-    * ssh `$ git clone git@gitlab.com:your-username/jekyll-theme-simple-blog.git`
-    * https: `$ git clone https://gitlab.com/lorepirri/jekyll-theme-simple-blog.git`
-3. Empty the `_posts/` folder
-4. Install bundler and gems with `$ script/bootstrap`
-5. Run Jekyll with `$ script/server`
-6. Modify `_config.yml`, `about-en.md`, `contact-en.md`, and the other pages for your project
-6. Write your posts in `_posts/en` and `_posts/<other-language>`
-7. [Customize the theme](customizing)
-
-### SEO tags
-
-Simple Blog includes simple SEO tags from [jekyll-social-metatags](https://github.com/lorepirri/jekyll-social-metatags). Have a look at the page for its usage.
-
-The usage is compatible with the plugin [Jekyll SEO Tag](https://github.com/jekyll/jekyll-seo-tag), which provides a battle-tested template of crowdsourced best-practices.
-
-To switch to a better SEO tags however, one should install [Jekyll Feed plugin](https://github.com/jekyll/jekyll-feed):
-
-1. Add this line to your site's Gemfile:
-
-    ```ruby
-    gem 'jekyll-seo-tag'
-    ```
-
-2. And then add this line to your site's `_config.yml`:
-
-    ```yml
-    gems:
-      - jekyll-seo-tag
-    ```
-
-3. Replace with the following, the `<!-- jekyll-seo-tag -->` comment in your site's `default.html`:
-
-      ```liquid
-      {% seo %}
-      ```
-
-For more information about configuring this plugin, see the official [Jekyll SEO Tag](https://github.com/jekyll/jekyll-seo-tag) page.
+![texture theme preview](/screen1.png)
 
 
-### Stylesheet
+## Installation on Github Pages
 
-If you'd like to add your own custom styles:
-
-1. Create a file called `/assets/css/style.scss` in your site
-2. Add the following content to the top of the file, exactly as shown:
-    ```scss
-    ---
-    ---
-
-    @import "{{ site.theme }}";
-    ```
-3. Add any custom CSS (or Sass, including imports) you'd like immediately after the `@import` line
-
-### Layouts
-
-If you'd like to change the theme's HTML layout:
-
-1. [Copy the original template](https://gitlab.com/lorepirri/jekyll-theme-simple-blog/blob/master/_layouts/default.html) from the theme's repository<br />(*Pro-tip: click "raw" to make copying easier*)
-2. Create a file called `/_layouts/default.html` in your site
-3. Paste the default layout content copied in the first step
-4. Customize the layout as you'd like
-
-### Sass variables
-
-If you'd like to change the theme's [Sass variables](https://gitlab.com/lorepirri/jekyll-theme-simple-blog/blob/master/_sass/variables.scss), set new values before the `@import` line in your stylesheet:
-
-```scss
-$section-headings-color: #0086b3;
-
-@import "{{ site.theme }}";
+Add this line to your site's `_config.yml`:
+```yaml
+remote_theme: thelehhman/texture
 ```
 
-## Roadmap
+**NOTE: If you are forking this repo, remove `base_url: /texture` in the `_config.yml` which is required to load the required website assets**
+## Installation
 
-See the [open issues](https://gitlab.com/lorepirri/jekyll-theme-simple-blog/issues) for a list of proposed features (and known issues).
+Add this line to your Jekyll site's `Gemfile`:
 
-## Project philosophy
+```ruby
+gem "texture"
+```
 
-The Simple Blog Theme is intended to make it quick and easy for Gitlab or GitHub Pages users to create their first (or 100th) website. The theme should meet the vast majority of users' needs out of the box, erring on the side of simplicity rather than flexibility, and provide users the opportunity to opt-in to additional complexity if they have specific needs or wish to further customize their experience (such as adding custom CSS or modifying the default layout). It should also look great, but that goes without saying.
+And add this line to your Jekyll site's `_config.yml`:
+
+```yaml
+theme: texture
+```
+
+And then execute:
+
+    $ bundle
+
+Or install it yourself as:
+
+    $ gem install texture
+
+## Usage
+
+The "texture" key in _config.yml is used to customize the theme data.
+```yaml
+texture:
+  title: Adam Denisov
+  tagline: Developer. Designer
+  date_format: "%b %-d, %Y"
+
+  social_links:
+    twitter: thelehhman
+    github:  thelehhman
+    linkedIn: in/thelehhman # format: locale/username
+```
+
+**Styling**
+
+Multiple header styles are supported using the "style" property under texture in `_config.yml`.
+
+```yaml
+texture:
+  style: [yellow|red|black|blue|green|purple]
+```
+
+For example, the blue style looks like this:
+
+![texture theme blue](/screen2.png)
+
+
+**Texture Picker**
+
+You can toggle the texture picker to show/experiment various textures on your site using the showPicker variable. Remember to make it `false` for production.
+
+```yaml
+texture:
+  showPicker: [false|true] # show the texture selector(development purposes)
+```
+
+**Comments (Disqus)**
+
+Comments on posts can be enabled by specifying your disqus_shortname under texture in `_config.yml`. For example,
+```yaml
+texture:
+  disqus_shortname: games
+```
+
+**Google Analytics**
+
+It can be enabled by specifying your analytics id under texture in `_config.yml`
+```yaml
+texture:
+  analytics_id: '< YOUR ID >'
+```
+
+**Excerpts**
+
+Excerpts can be enabled by adding the following line to your `_config.yml`
+```yaml
+show_excerpts: true
+```
+
+**Toggle Navbar**
+
+```yaml
+texture:
+  showNav: true
+```
+
+**Navigation**
+
+After setting `showNav` to true navigation can be built by adding the following to your `_config.yml`
+
+```yaml
+texture:
+  navigation:
+    - title: My Work
+      url: "/my-work"
+    - title: Resume
+      url: "/resume"
+```
+
+**Layouts**
+
+- Home
+- Page
+- Post
 
 ## Contributing
 
-Interested in contributing to Simple Blog? We'd love your help. Simple Blog is an open source project, built one contribution at a time by users like you. See [the CONTRIBUTING file](CONTRIBUTING.md) for instructions on how to contribute.
+Bug reports and pull requests are welcome on GitHub at https://github.com/thelehhman/texture. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
-### Previewing the theme locally
+## Development
 
-If you'd like to preview the theme locally (for example, in the process of proposing a change):
+To set up your environment to develop this theme, run `bundle install`.
 
-1. Clone down the theme's repository (`git clone https://gitlab.com/lorepirri/jekyll-theme-simple-blog`)
-2. `cd` into the theme's directory
-3. Run `script/bootstrap` to install the necessary dependencies
-4. Run `script/server` to start the preview server
-5. Visit [`localhost:4000`](http://localhost:4000) in your browser to preview the theme
+Your theme is setup just like a normal Jekyll site! To test your theme, run `bundle exec jekyll serve` and open your browser at `http://localhost:4000`. This starts a Jekyll server using your theme. Add pages, documents, data, etc. like normal to test your theme's contents. As you make modifications to your theme and to your content, your site will regenerate and you should see the changes in the browser after a refresh, just like normal.
 
+When your theme is released, only the files in `_layouts`, `_includes`, `_sass` and `assets` tracked with Git will be bundled.
+To add a custom directory to your theme-gem, please edit the regexp in `texture.gemspec` accordingly.
 
-[`.gitlab-ci.yml`]: https://gitlab.com/jekyll-themes/default-bundler/blob/master/.gitlab-ci.yml
-[`Gemfile`]: https://gitlab.com/jekyll-themes/default-bundler/blob/master/Gemfile
-[`.gitignore`]: https://gitlab.com/jekyll-themes/default-bundler/blob/master/.gitignore
-[`_config.yml`]: https://gitlab.com/jekyll-themes/default-bundler/blob/master/_config.yml
+## Donation
+If this project help you reduce time to develop, you can give me a cup of coffee :) 
 
-[Bundler]: http://bundler.io/
-[Jekyll]: http://jekyllrb.com/
-[jek-312]: https://rubygems.org/gems/jekyll/versions/3.1.2
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://paypal.me/thelehhman)
+
+## License
+
+The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
+## More Themes
+[plainwhite](https://github.com/thelehhman/plainwhite-jekyll)
