@@ -5,13 +5,13 @@ baseurl:
 url: https://mazhuang.org
 date_format: "ordinal"
 title: GZY's Blog
-subtitle: ""
-description: "Ein Anfänger in Informatik"
+subtitle: "GZY's Blog"
+description: "GZY's Blog"
 keywords: 码志, Zhuang Ma, mzlogin, mazhuang, 闷骚的程序员
 timezone: Asia/Shanghai
 encoding: "utf-8"
 side_bar_repo_limit: 5
-repository: https://github.com/Mateguo1
+repository: mateguo1/mateguo1.github.io
 # 对 css 和 js 资源的 cdn 加速配置
 cdn:
     jsdelivr:
