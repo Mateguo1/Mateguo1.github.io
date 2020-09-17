@@ -29,8 +29,11 @@ Next, let's take a look at the statement in the original paper, that is in blue 
 
 ![BN2](/assets/img/BN2.png)
 
-首先是对一个Batch size里面的所有样本进行求均值、方差，然后是对于每一个样本先减去均值，然后再除以标准差，注意这里的$\epsilon$一般就是设置一个非常小的值，这是为了防止方差为零的情况出现。然后最后再通过$ \gamma$对方差进行调整，通过$\beta$对均值也就是中心点进行调整。这里的$ \gamma$和$\beta$的初值分别是1和0，也就是上面所说的feature map所要满足的规律，当然这里的$ \gamma$和$\beta$是要通过反向传播来进行调整的，这是因为上述规律的效果可能并不是最好的。
+First, caculate the mean value and variance of all samples in a batch size, and then subtract the mean value for each sample, and then divide it by the standard deviation. Note that the **$\epsilon$** here is usually set to a vert small value, which is to prevent the occurrence of zero variance. Finally, adjust the square difference through $ \gamma$ , and adjust the mean value, that is, the center point, through $\beta$ .The initail values of $\gamma$ and $\beta$ here are 1 and 0 respectively, which is the rule that feature map mentioned above must satisfy. Of course the  $\gamma$ and $\beta$ need to be adjusted through back propagation, because the effect of the above law might not be the best one.
 
-接下来我借用一位大佬的博客内容，举例解释下如何计算方差$\sigma^2$和均值$\mu$：
+Next, I'll use a blog from a big shot to explain how to caculate the variance $\sigma^2$and the mean $\mu$：
 
-![BN2](/assets/img/BN2.png)
+![BN3](/assets/img/BN3.png)
+
+The above figure shows us the calculation process of batch normalization with batch size 2, that is, two pictures. Suppose that feature1 and feature2 are the feature maps obtained from image1 and image2 after a series of convolution or pooling, the channel of feature is 2, so $x^{(1)}$ and $x^{(2)}$ is the data of channel in those batches.
+
