@@ -11,7 +11,7 @@ keywords: Batch Normalization
 Batch Normalization was proposed by Google team in Paper "Batch Normalization: Accelerating Deep Network Training b y Reducing Internal Covariate Shift" in 2015. The method could accelerate the convergence of the network and improve the accuracy. Although there are many related articles on the Internet, they rarely focus on how BN really works.
 
 In this article, I will show you the following points:
-1) principle of BN
+1) principle of BN </p>
 2) why use BN
 3) point for attention in using BN
 
@@ -49,6 +49,6 @@ With the developement of Deep Learning, Dropout has been gradually replaced by B
 
 1)The larger the batch size is, the better the performace of BN will be. A larger batch size means that $\sigma^2$and $\mu$ will be closer to the mean and variance of the whole training set.
 
-2)It's suggested that the BN layer be placed between the convolution layer and the active layer, and the bias needn't be used in the convolution layer, because it is useless. Refer to the following figure for reasoning, even if bias is used, the Result is same: $ y_i^b = y_i $
+2)It's suggested that the BN layer be placed between the convolution layer and the active layer, and the bias needn't be used in the convolution layer, because it is useless. Refer to the following figure for reasoning, even if bias is used, the Result is same: $ y_i^b = y_i \$
 
 ![BN4](/assets/img/BN4.png)
