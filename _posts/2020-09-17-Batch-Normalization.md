@@ -28,3 +28,4 @@ Next, let's take a look at the statement in the original paper, that is in blue 
  For example, we can assume that the input ***x*** is a RGB three channer color image, 
 ***d*** means the input image's channel, that is , d = 3. And now let's take a look at the formula given in the article.
 
+![BN2](/assets/img/BN2.png)
