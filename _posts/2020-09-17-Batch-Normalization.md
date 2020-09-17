@@ -58,4 +58,6 @@ With the developement of Deep Learning, Dropout has been gradually replaced by B
 
 <\beta>
 
+\\(aa\\)
+
 ![BN4](/assets/img/BN4.png)
