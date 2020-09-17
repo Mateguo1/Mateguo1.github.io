@@ -56,8 +56,4 @@ With the developement of Deep Learning, Dropout has been gradually replaced by B
 
 2)It's suggested that the BN layer be placed between the convolution layer and the active layer, and the bias needn't be used in the convolution layer, because it is useless. Refer to the following figure for reasoning, even if bias is used, the Result is same: $ y_i^b = y_i $
 
-<\beta>
-
-\\(aa\\)
-
 ![BN4](/assets/img/BN4.png)
