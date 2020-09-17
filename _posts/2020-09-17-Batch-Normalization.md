@@ -11,8 +11,8 @@ keywords: Batch Normalization
 Batch Normalization was proposed by Google team in Paper "Batch Normalization: Accelerating Deep Network Training b y Reducing Internal Covariate Shift" in 2015. The method could accelerate the convergence of the network and improve the accuracy. Although there are many related articles on the Internet, they rarely focus on how BN really works.
 
 In this article, I will show you the following points:
-1) principle of BN </p>
-2) why use BN
+1) principle of BN <bn>
+2) why use BN <bn>
 3) point for attention in using BN
 
 ## 1.  Principle of BN:
@@ -41,9 +41,9 @@ The above figure shows us the calculation process of batch normalization with ba
 
 With the developement of Deep Learning, Dropout has been gradually replaced by BN in modern convolution architecture.I think there are three reasons for this as below:
 
-1)BN also has the same regularization effect as dropout;
-2)The regularization effect of dropout on convolution is limited. Comparesd with the fully connected layer, the training parameters of convolution layer are less, and the activation function can also complete the spatial transformation of features, so the regularization effect is not obvious in the convolution layer;
-3)The full connection layer where dropout can play an important role is gradually replaced by global average pooling, which can not only reduce the model size, and also improve the performance of the model.
+1)BN also has the same regularization effect as dropout;<bn>
+2)The regularization effect of dropout on convolution is limited. Comparesd with the fully connected layer, the training parameters of convolution layer are less, and the activation function can also complete the spatial transformation of features, so the regularization effect is not obvious in the convolution layer;<bn>
+3)The full connection layer where dropout can play an important role is gradually replaced by global average pooling, which can not only reduce the model size, and also improve the performance of the model.<bn>
 
 ## point for attention in using BN
 
