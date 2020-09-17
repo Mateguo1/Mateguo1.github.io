@@ -40,7 +40,7 @@ Next, I'll use a blog from a big shot to explain how to caculate the variance $\
 
 The above figure shows us the calculation process of batch normalization with batch size 2, that is, two pictures. Suppose that feature1 and feature2 are the feature maps obtained from image1 and image2 after a series of convolution or pooling, the channel of feature is 2, so $x^{(1)}$ and $x^{(2)}$ is the data of channel in those batches.At last, you'll end up with two vectors, $\gamma$ and $\beta$.
 
-## why use BN:
+## 2. why use BN:
 
 With the developement of Deep Learning, Dropout has been gradually replaced by BN in modern convolution architecture.I think there are three reasons for this as below:
 
@@ -50,10 +50,12 @@ With the developement of Deep Learning, Dropout has been gradually replaced by B
 
 3)The full connection layer where dropout can play an important role is gradually replaced by global average pooling, which can not only reduce the model size, and also improve the performance of the model.
 
-## point for attention in using BN
+## 3. point for attention in using BN
 
 1)The larger the batch size is, the better the performace of BN will be. A larger batch size means that $\sigma^2$and $\mu$ will be closer to the mean and variance of the whole training set.
 
 2)It's suggested that the BN layer be placed between the convolution layer and the active layer, and the bias needn't be used in the convolution layer, because it is useless. Refer to the following figure for reasoning, even if bias is used, the Result is same: $ y_i^b = y_i $
+
+<\beta>
 
 ![BN4](/assets/img/BN4.png)
