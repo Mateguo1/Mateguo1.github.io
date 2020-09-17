@@ -153,3 +153,11 @@ google:
         sidebar: true 
         content_header: true
         content_footer: false
+
+math:
+    engine: 'mathjax'
+    mathjax:
+        src: "//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+        config:
+            tex2jax:
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ]
