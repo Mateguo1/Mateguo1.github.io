@@ -1,5 +1,5 @@
 ---
-layout: post
+20200917202952layout: post
 title: Detailed explanation of Batch Normalization
 categories: Computer Version
 description: Batch Normalization
@@ -32,7 +32,7 @@ Next, let's take a look at the statement in the original paper, that is in blue 
 
 ![BN2](/assets/img/BN2.png)
 
-First, caculate the mean value and variance of all samples in a batch size, and then subtract the mean value for each sample, and then divide it by the standard deviation. Note that the ![20200917203147](/assets/img/20200917203147.png)here is usually set to a vert small value, which is to prevent the occurrence of zero variance. Finally, adjust the square difference through ![20200917202838](/assets/img/20200917202838.png) , and adjust the mean value, that is, the center point, through![1600345478532](/assets/img/1600345478532.png) .The initail values of ![20200917202838](/assets/img/20200917202838.png) and![1600345478532](/assets/img/1600345478532.png) here are 1 and 0 respectively, which is the rule that feature map mentioned above must satisfy. Of course the ![20200917202838](/assets/img/20200917202838.png) and![1600345478532](/assets/img/1600345478532.png) need to be adjusted through back propagation, because the effect of the above law might not be the best one.
+First, caculate the mean value and variance of all samples in a batch size, and then subtract the mean value for each sample, and then divide it by the standard deviation. Note that the ![20200917203605](/assets/img/20200917203605.png)here is usually set to a vert small value, which is to prevent the occurrence of zero variance. Finally, adjust the square difference through ![20200917202838](/assets/img/20200917202838.png) , and adjust the mean value, that is, the center point, through![20200917202952](/assets/img/20200917202952.png) .The initail values of ![20200917202838](/assets/img/20200917202838.png) and![20200917202952](/assets/img/20200917202952.png) here are 1 and 0 respectively, which is the rule that feature map mentioned above must satisfy. Of course the ![20200917202838](/assets/img/20200917202838.png) and![20200917202952](/assets/img/20200917202952.png) need to be adjusted through back propagation, because the effect of the above law might not be the best one.
 
 Next, I'll use a blog from a big shot to explain how to caculate the variance ![1600345427335](/assets/img/1600345427335.png)and the mean ![1600345478532](/assets/img/1600345478532.png) ：
 
