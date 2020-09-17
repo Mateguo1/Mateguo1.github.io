@@ -29,3 +29,9 @@ Next, let's take a look at the statement in the original paper, that is in blue 
 ***d*** means the input image's channel, that is , d = 3. And now let's take a look at the formula given in the article.
 
 ![BN2](/assets/img/BN2.png)
+
+首先是对一个Batch size里面的所有样本进行求均值、方差，然后是对于每一个样本先减去均值，然后再除以标准差，注意这里的$\epsilon$一般就是设置一个非常小的值，这是为了防止方差为零的情况出现。然后最后再通过$ \gamma$对方差进行调整，通过$\beta$对均值也就是中心点进行调整。这里的$ \gamma$和$\beta$的初值分别是1和0，也就是上面所说的feature map所要满足的规律，当然这里的$ \gamma$和$\beta$是要通过反向传播来进行调整的，这是因为上述规律的效果可能并不是最好的。
+
+接下来我借用一位大佬的博客内容，举例解释一下：
+
+![BN2](/assets/img/BN2.png)
