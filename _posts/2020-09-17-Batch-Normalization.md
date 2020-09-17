@@ -54,6 +54,6 @@ With the developement of Deep Learning, Dropout has been gradually replaced by B
 
 1)The larger the batch size is, the better the performace of BN will be. A larger batch size means that $\sigma^2$and $\mu$ will be closer to the mean and variance of the whole training set.
 
-2)It's suggested that the BN layer be placed between the convolution layer and the active layer, and the bias needn't be used in the convolution layer, because it is useless. Refer to the following figure for reasoning, even if bias is used, the Result is same: $ y_i^b = y_i $
+2)It's suggested that the BN layer be placed between the convolution layer and the active layer, and the bias needn't be used in the convolution layer, because it is useless. Refer to the following figure for reasoning, even if bias is used, the Result is same: $$ y_i^b = y_i $$
 
 ![BN4](/assets/img/BN4.png)
