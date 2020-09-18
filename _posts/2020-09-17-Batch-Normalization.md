@@ -8,7 +8,7 @@ keywords: Batch Normalization
 
 # Batch Normalization:
 
-Batch Normalization was proposed by Google team in Paper "Batch Normalization: Accelerating Deep Network Training b y Reducing Internal Covariate Shift" in 2015. The method could accelerate the convergence of the network and improve the accuracy. Although there are many related articles on the Internet, they rarely focus on how BN really works.
+Batch Normalization was proposed by Google team in Paper "Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift" in 2015. The method could accelerate the convergence of the network and improve the accuracy. Although there are many related articles on the Internet, they rarely focus on how BN really works.
 
 In this article, I will show you the following points:
 
