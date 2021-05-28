@@ -30,7 +30,7 @@ keywords: CV, CNN
 
 ​	然后是下图所示的Pointwise convolution：
 
-![image-20210525085320164](/assets/img/Pointwise.png)
+![image-20210525085320164](/assets/img/pointwise.png)
 
 计算结果为：3×3×3=27 + 1×1×3×4=12 = 39 << 108;
 
@@ -41,25 +41,24 @@ keywords: CV, CNN
 ​       ![image-20210525085320164](/assets/img/解释.png)
 
 ​	下面显示的是DW卷积的参数计算公式：
-$$
-D_K · D_k · M · D_F · D_F + M · N · D_F · D_F
-$$
+
+![image-20210528215600759](/assets/img/image-20210528215600759.png)
+
 ​	α指的是**宽度乘子（ Width Multiplier ）**，主要是为了更小、计算代价更少的模型，其取值范围为 (0,1]，将输入通道尺寸由M变为αM，输出通道尺寸由N变为αN。
 
 ![image-20210528205109391](/assets/img/image-20210528205109391.png)
 
 ​	在添加了α之后，DW卷积的参数计算公式如下：
-$$
-D_K · D_k · \alpha M · D_F · D_F + \alpha M · \alpha N · D_F · D_F
-$$
+
+![image-20210528215625240](/assets/img/image-20210528215625240.png)
+
 ​	β指的是**简式显示（ Reduced Representation ）**，，其取值范围为 (0,1]，通过改变输入尺寸，来减少神经网络的计算代价。
 
 ![image-20210528205128060](/assets/img/image-20210528205128060.png)
 
 在添加了β之后，DW卷积的参数计算公式如下：
-$$
-D_K · D_k · \alpha M · \beta D_F · \beta D_F + \alpha M · \alpha N · \beta D_F · \beta D_F
-$$
+
+![image-20210528215635800](/assets/img/image-20210528215635800.png)
 
 # MobileNet V2：
 
