@@ -118,10 +118,6 @@ $$
 ![image-20210528213446844](/assets/img/image-20210528213446844.png)
 
 其中用到的新的激活函数hard-swish，公式如下：
-$$
-hard-swish(x)=\frac{x·ReLU6(x+3)}{6}
-$$
-![image-20210525085320164](/assets/img/image-20210525085320164.png)
 
-
+![image-20210528222414112](/assets/img/image-20210528222414112.png)
 
