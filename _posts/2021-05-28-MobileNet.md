@@ -65,7 +65,7 @@ $$
 
 ​	MobileNet V2在2018年由Google团队提出，相比于MobileNet V1，主要是提出了有线性瓶颈的逆残差结构，其整体网络结构如下所示：
 
-![image-20210525085320164](/assets/img/MobileNet V2.png)
+![image-20210525085320164](/assets/img/MobileNet.png)
 
 ## Inverted Residuals with Linear Bottlenecks：
 
