@@ -78,10 +78,8 @@ keywords: CV, CNN
 |    3×3卷积     |         3×3卷积         |
 |  1×1卷积升维   |       1×1卷积降维       |
 
-还引入了ReLU6，其公式为：
-$$
-ReLU(x) = min(max(0,x),6)
-$$
+还引入了ReLU6，其公式为：***ReLU(x) = min(max(0,x),6)*** 。
+
 其与ReLU之间的对比，直观展示如下：
 
 ![img](/assets/img/wps2.jpg)
@@ -107,9 +105,8 @@ $$
 ![image-20210525085320164](/assets/img/SE.png)
 
 其中用到的新的激活函数hard-sigmoid，公式如下：
-$$
-hard-sigmoid(x)=\frac{ReLU6(x+3)}{6}
-$$
+
+![image-20210529074923076](/assets/img/image-20210529074923076.png)
 
 ## Last Stage:
 
