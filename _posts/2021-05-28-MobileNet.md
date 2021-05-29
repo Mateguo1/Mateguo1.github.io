@@ -108,7 +108,7 @@ keywords: CV, CNN
 
 其中用到的新的激活函数hard-sigmoid，公式如下：
 
-![image-20210529074923076](/assets/img/image-20210529074923076.png)
+![image-20210529074923076](/assets/img/hs.png)
 
 ## Last Stage:
 
