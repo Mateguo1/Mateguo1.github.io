@@ -53,7 +53,7 @@ keywords: deep-learning
 
 ![image-20211130215940213](https://raw.githubusercontent.com/Mateguo1/Pictures/master/img/image-20211130215940213.png)
 
-首先解释下上图中的变量表示的意义，输入 $ A=[a_1, ....., a_n] $ ，每一个向量对应有一个$q^i, k^i, v^i $，其中q是query，k是key，v是value，是分别根据$ W^q\cdot{a^i}, W^k\cdot{a^i}, W^v\cdot{a^i} $得到的，而这$ W^q, W^k, W^v$就是我们要学习的参数，然后$\alpha'_{i,j}=q^i\cdot{k^j}$，表示$a^i$和$a^j$的相关程度（内积值越大，余弦值越大，相似度越高），最后$b^i=\sum_{i} \alpha'_{i,j} \cdot v^i$，这里提示个小点，i是作为q，而j是作为k。
+首先解释下上图中的变量表示的意义，输入 $ A=[a_1, ....., a_n] $ ，每一个向量对应有一个$q^i, k^i, v^i $，其中q是query，k是key，v是value，是分别根据$ W^q\cdot{a^i}, W^k\cdot{a^i}, W^v\cdot{a^i} $得到的，而这$ W^q, W^k, W^v$就是我们要学习的参数，然后$\alpha'_{i,j}=q^i\cdot{k^j}$，主要是用来表示$a^i$和$a^j$的相关程度（内积值越大，余弦值越大，相似度越高），最后$b^i=\sum_{i} \alpha'_{i,j} \cdot v^i$，这里提示个小点，i是作为q，而j是作为k。
 
 #### 1.3.2.2 Scaled Dot-Product Attention：
 
