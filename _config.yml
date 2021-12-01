@@ -10,39 +10,52 @@ description: "GZY's Blog"
 keywords: GZY's Blog
 timezone: Asia/Shanghai
 encoding: "utf-8"
-side_bar_repo_limit: 5
 repository: mateguo1/mateguo1.github.io
-# �?css �?js 资源�?cdn 加速配�?
+# 对 css 和 js 资源的 cdn 加速配置
 cdn:
     jsdelivr:
         enabled: true
-# 组件配置
+# 可选组件配置
 components:
     # 分享
+    # weibo,qq,wechat,douban,qzone,linkedin,facebook,twitter
     share:
         enabled: false
-    # 不蒜子访问统�?
+        hide-platforms: qq,facebook
+    # 不蒜子访问统计
     busuanzi:
-        enabled: true
+        enabled: false
         start_date: 2020-05-03
+    # My Popular Repositories
+    side_bar_repo:
+        enabled: true
+        limit: 5
+    # 文章字数统计
+    word_count:
+        enabled: true
+    # 页面右上角，以及「关于」页面的二维码
+    # 修改图片请替换 assets/images/qrcode.jpg
+    qrcode:
+        enabled: true
+        image_alt: 闷骚的程序员
+    # 维基索引页使用哪种视图，支持 列表（list）/分类（cate）
+    wiki:
+        view: cate
 # 压缩页面内容
 compress_html:
   clippings: all
   comments: ["<!--", "-->"]
-# 文章字数统计
-word_count:
-    enabled: true
-# 代码高亮风格，支持的 theme 列表�?https://github.com/mzlogin/rouge-themes
+# 代码高亮风格，支持的 theme 列表见 https://github.com/mzlogin/rouge-themes
 highlight_theme: github
 
 # ---------------- #
 #      Author      #
 # ---------------- #
-author: GuoZiyu
+author: Guoziyu
 organization: 
 organization_url: 
 github_username: Mateguo1
-location: Shandong, China
+location: Shandong China
 email: gzypro@hotmail.com
 
 # ---------------- #
@@ -63,7 +76,7 @@ navs:
 
 #   -
 #     href: /open-source/
-#     label: 开�?
+#     label: 开源
 
   -
     href: /wiki/
@@ -111,7 +124,7 @@ collections:
 # ---------------- #
 #      Comments    #
 # ---------------- #
-# support provider: disqus, gitment, gitalk
+# support provider: disqus, gitment, gitalk, utterances
 comments_provider: gitalk
 # !!!重要!!! 请修改下面这些信息为你自己申请的
 # !!!Important!!! Please modify infos below to yours
@@ -131,7 +144,10 @@ gitalk:
     repo: blog-comments
     clientID: d2e1cbbd298958076462
     clientSecret: b42a4178e5fd4a7cf63189ef4b1453b05c375709
-# 在使用其它评论组件时可点击显�?Disqus
+# https://utteranc.es/
+utterances:
+    repo: mzlogin/blog-comments
+# 在使用其它评论组件时可点击显示 Disqus
 lazy_load_disqus : false
 
 # ---------------- #
@@ -151,14 +167,5 @@ google:
     adsense:
         footer: true
         sidebar: true 
-        content_header: true
+        content_header: false
         content_footer: false
-
-math:
-    engine: 'mathjax'
-    mathjax:
-        src: "//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
-        config:
-            tex2jax:
-                inlineMath: [ ['$','$'], ["\\(","\\)"] ]
-
