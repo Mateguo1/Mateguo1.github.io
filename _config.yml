@@ -161,4 +161,4 @@ math:
         config:
             tex2jax:
                 inlineMath: [ ['$','$'], ["\\(","\\)"] ]
-markdown: kramdown
+
