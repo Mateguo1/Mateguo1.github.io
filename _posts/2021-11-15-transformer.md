@@ -95,7 +95,7 @@ keywords: deep-learning
 
 ![image-20211130223714932](https://raw.githubusercontent.com/Mateguo1/Pictures/master/img/image-20211130223714932.png)
 
-### 2.2 ：
+### 1.4.2 ：
 
 ![Transformer_2](https://raw.githubusercontent.com/Mateguo1/Pictures/master/img/Transformer_2.jpg)
 
