@@ -35,7 +35,7 @@ Encoder这里就和Transformer的encoder差不多了，MLP那里也很简单，�
 
 ### 2.1 GELU：
 
-全称：Gaussian Error Linerar Units，这是相关知识的整理，也不太明白到底原理是啥，这里附上一个链接https://baijiahao.baidu.com/s?id=1653421414340022957&wfr=spider&for=pc
+全称：Gaussian Error Linerar Units，这是相关知识的整理，也不太明白到底原理是啥，这里先附上一个链接https://baijiahao.baidu.com/s?id=1653421414340022957&wfr=spider&for=pc，留坑。
 
 函数形式$ GELU(x)=0.5x(1+tanh(\sqrt{2/\pi(x+0.044715x^3)})) $
 
