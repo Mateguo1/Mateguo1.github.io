@@ -1,6 +1,6 @@
 ---
 layout: post
-title: TVision Transformer
+title: Vision Transformer
 description: deep-learning
 keywords: deep-learning
 ---
