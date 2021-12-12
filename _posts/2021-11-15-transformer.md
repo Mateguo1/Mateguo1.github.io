@@ -68,6 +68,14 @@ $$ p_{i,2j}=sin(\frac{i}{100000^{2j/d}}) \\ p_{i,2j+1}=cos(\frac{i}{100000^{2j/d
 
 ![image-20211130215448550](https://raw.githubusercontent.com/Mateguo1/Pictures/master/img/image-20211130215448550.png)
 
+<center style="color:#C0C0C0;text-decoration:underline">图1.Transformer</center>
+
+```
+
+```
+
+
+
 <center color:#C0C0C0;text-decoration:underline">图1.Encoder Block</center> 
 
 首先，从图1.的整体上来看Encoder结构，很明显可以看它前面是有一个N×（论文里面是用的N=6），而这N个Encoder的结构是一样的，但是其中的参数是不一样的，从图2.中可以看到一个Encoder Block的结构分解为右半部分那样。
