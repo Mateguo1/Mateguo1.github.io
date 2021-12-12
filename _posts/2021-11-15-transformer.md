@@ -33,15 +33,49 @@ keywords: deep-learning
 
 首先来看encoder结构，很明显可以看到encoder前面是有一个N×（论文里面是给出了N=6），而这N个encoder的网络结构是一样的，但是其中的参数是不一样的，通过下图可以看到一个block的结构可以分解为右半部分那样。
 
-![image-20211130221911379](https://raw.githubusercontent.com/Mateguo1/Pictures/master/img/image-20211130221911379.png)
+![图1-1](https://raw.githubusercontent.com/Mateguo1/Pictures/master/img/image-20211130221911379.png)
 
-首先Add&Norm，这两步操作可以通过下图来展示，分别为residual和layer normalization，其中残差结构在ResNet中提到过，这里就不再赘述了。
+首先Add Norm，这两步操作可以通过下图来展示，分别为residual和layer normalization。
 
 ![image-20211130222242028](https://raw.githubusercontent.com/Mateguo1/Pictures/master/img/image-20211130222242028.png)
 
-### 1.3.1 layer norm：
+### 1.3.1 add norm：
 
-对比batch norm（每一个特征，减掉均值，除以方差，均值0，方差1），layer norm（每一个样本），二维是转置batch norm转置即可，而三维的话，切出来的是两个平面，一个原因：时序数据的样本长度变化，变化大，均值方差变化大，做预测全局均值方差，遇到一个特殊的样本就可能不那么好用，而layer是在样本里面算的，就没有这样的问题了。之后有的论文对layer norm的梯度方面进行了分析，这里就不再深入讲解了（留个坑）。
+#### 1.3.1.1 layer norm:
+
+对比batch norm（每一个特征，减掉均值，除以方差，均值0，方差1），layer norm（每一个样本），二维是转置batch norm转置即可，也就是基于特征维度进行规范化，而三维的话，切出来的是两个平面。使用层规范化的原因主要为：时序数据的样本长度会变化，如果变化大，那么均值方差变化大，在做预测全局均值方差时，如果遇到一个特殊的样本，对这个样本而言就可能不那么好用，而layer是在样本里面算的，就没有这样的问题了。之后有的论文对layer norm的梯度方面进行了分析，这里就不再深入讲解了（留个坑）。
+
+```python
+ln = nn.LayerNorm(2)
+bn = nn.BatchNorm1d(2)
+X = torch.tensor([[1, 2], [2, 3]], dtype=torch.float32)
+# 在训练模式下计算X的均值和方差
+print('layer norm:', ln(X), '\nbatch norm:', bn(X))
+
+'''
+output:
+layer norm: tensor([[-1.0000,  1.0000],
+        [-1.0000,  1.0000]], grad_fn=<NativeLayerNormBackward>)
+batch norm: tensor([[-1.0000, -1.0000],
+        [ 1.0000,  1.0000]], grad_fn=<NativeBatchNormBackward>)
+'''
+```
+
+#### 1.3.1.2 add norm:
+
+使用残差连接（需要两个输入形状相同）、LN来实现该类，代码如下：
+
+```python
+class AddNorm(nn.Module):
+    """残差连接后进行层规范化"""
+    def __init__(self, normalized_shape, dropout, **kwargs):
+        super(AddNorm, self).__init__(**kwargs)
+        self.dropout = nn.Dropout(dropout)
+        self.ln = nn.LayerNorm(normalized_shape)
+
+    def forward(self, X, Y):
+        return self.ln(self.dropout(Y) + X)
+```
 
 ### 1.3.2 attention：
 
@@ -75,11 +109,26 @@ keywords: deep-learning
 
 上图是2 heads的例子，其实就是将$q^i, k^i, v^i $以及 $b^i$ 变成了$q^{i,k}, k^{i,k}, v^{i,k}, b^{i,k}$。
 
-#### 1.3.4 position-wise Feed-Forward：
+#### 1.3.4 position-wise Feed-Forward Networks：
 
-这个其实就是通过一个1×1的卷积核来升维，再一个1×1的卷积核来降维，中间再加一个ReLU，公式如下图所示。
+这个其实就是通过一个1×1的卷积核来升维，再一个1×1的卷积核来降维，中间再加一个ReLU，公式为：$FFN(x)=max(0,xW_1+b_1)W_2+b_2$，下面来看一下这部分的代码：
 
-![image-20211201121207977](https://raw.githubusercontent.com/Mateguo1/Pictures/master/img/image-20211201121207977.png)
+```python
+#@save
+class PositionWiseFFN(nn.Module):
+    """基于位置的前馈网络"""
+    def __init__(self, ffn_num_input, ffn_num_hiddens, ffn_num_outputs,
+                 **kwargs):
+        super(PositionWiseFFN, self).__init__(**kwargs)
+        self.dense1 = nn.Linear(ffn_num_input, ffn_num_hiddens)
+        self.relu = nn.ReLU()
+        self.dense2 = nn.Linear(ffn_num_hiddens, ffn_num_outputs)
+
+    def forward(self, X):
+        return self.dense2(self.relu(self.dense1(X)))
+```
+
+其实就是输入张量X（批量大小，时间序列长度，隐藏特征维度）被一个两层的MLP转换成输出张量Y（批量大小，时间序列长度，ffn_num_outputs)，其实可以直接把这个操作理解成将输出张量最后一维给变了下。
 
 ### 1.4 decoder：
 
