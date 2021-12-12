@@ -7,7 +7,7 @@ keywords: deep-learning
 
 # Transformer:
 
-今天新开一个坑（虽然之前好多坑都没填完，哈哈哈哈），首先《Attention Is All You Need》论文链接：https://arxiv.org/pdf/1706.03762.pdf。
+今天新开一个坑（虽然之前好多坑都没填完，哈哈哈哈），首先《Attention Is All You Need》论文链接：<a href="https://arxiv.org/pdf/1706.03762.pdf"></a>。
 
 接下来，先整理下李宏毅老师的ML课上讲的transformer，课件链接：https://speech.ee.ntu.edu.tw/~hylee/ml/ml2021-course-data/seq2seq_v9.pdf，然后这部分主要是针对我听完课程之后的一些个人的思路总结，顺序上可能和课件不太一样，因此还是很建议大家直接去看课程视频，讲的太好了！（ps：由于是学习总结，所以会借用大量李老师课件里的图），下面整理的理论部分主要是参考李宏毅老师的，而代码部分主要用到了李沐老师的动手深度学习的内容，网址为：https://d2l.ai/index.html。
 
@@ -70,25 +70,17 @@ $$ p_{i,2j}=sin(\frac{i}{100000^{2j/d}}) \\ p_{i,2j+1}=cos(\frac{i}{100000^{2j/d
 
 <center style="color:#C0C0C0;text-decoration:underline">图1.Transformer</center>
 
-```
-
-```
-
-
-
-<center color:#C0C0C0;text-decoration:underline">图1.Encoder Block</center> 
-
 首先，从图1.的整体上来看Encoder结构，很明显可以看它前面是有一个N×（论文里面是用的N=6），而这N个Encoder的结构是一样的，但是其中的参数是不一样的，从图2.中可以看到一个Encoder Block的结构分解为右半部分那样。
 
 ![图1-1](https://raw.githubusercontent.com/Mateguo1/Pictures/master/img/image-20211130221911379.png)
 
-<center color:#C0C0C0;text-decoration:underline">图2.Encoder Block</center> 
+<center style="color:#C0C0C0;text-decoration:underline">图2.Encoder Block</center> 
 
 而整体的Encoder Block实际上，首先Multi-Head Attention，然后是Add Norm，结构如图3.所示，分别为残差结构和层规范化，最后还包括一个Feed Forward，下面首先将分开讲解这三个部分，然后最后再结合起来说明整个Block的结构。
 
 ![image-20211130222242028](https://raw.githubusercontent.com/Mateguo1/Pictures/master/img/image-20211130222242028.png)
 
-<center color:#C0C0C0;text-decoration:underline">图3. Add Norm</center> 
+<center style="color:#C0C0C0;text-decoration:underline">图3. Add Norm</center> 
 
 ### 1.3.1 Add Norm：
 
@@ -136,19 +128,19 @@ class AddNorm(nn.Module):
 
 ### 1.3.2 Multi-Head Attention：
 
-这部分涉及到了self-attention的部分，图3.是原论文中给出的Scaled Dot-Product Attention和Multi-Head Attention的结构，而接下来，我会先整理一下李宏毅老师的课里讲的self-attention（ppt：https://speech.ee.ntu.edu.tw/~hylee/ml/ml2021-course-data/self_v7.pdf），所以会再多借用下李老师的图，hhh，但是仅限于整理，思路可有那么一点点不连贯，所以具体内容还是建议大家去看李老师的视频学习。
+这部分涉及到了self-attention的部分，图4.是原论文中给出的Scaled Dot-Product Attention和Multi-Head Attention的结构，而接下来，我会先整理一下李宏毅老师的课里讲的self-attention（ppt：https://speech.ee.ntu.edu.tw/~hylee/ml/ml2021-course-data/self_v7.pdf），所以会再多借用下李老师的图，hhh，但是仅限于整理，思路可有那么一点点不连贯，所以具体内容还是建议大家去看李老师的视频学习。
 
 ![](https://raw.githubusercontent.com/Mateguo1/Pictures/master/img/image-20211201114128528.png)
 
-<center color:#C0C0C0;text-decoration:underline">图3. Scaled Dot-Product Attention和Multi-Head Attention</center> 
+<center style="color:#C0C0C0;text-decoration:underline">图4. Scaled Dot-Product Attention和Multi-Head Attention</center> 
 
 #### 1.3.2.1 self-attention：
 
 ![image-20211130215940213](https://raw.githubusercontent.com/Mateguo1/Pictures/master/img/image-20211130215940213.png)
 
-<center color:#C0C0C0;text-decoration:underline">图4. Self-attention</center> 
+<center style="color:#C0C0C0;text-decoration:underline">图5. Self-attention</center> 
 
-解释下图4.中的变量表示的意义，输入 $ A=[a_1, ....., a_n] $ ，每一个向量对应有一个$q^i, k^i, v^i $，其中q是query，k是key，v是value，是分别根据$ W^q\cdot{a^i}, W^k\cdot{a^i}, W^v\cdot{a^i} $得到的，而$ W^q, W^k, W^v$这三个就是模型要学习的参数，然后$ \alpha'_{i,j}=q^i\cdot{k^j}$ ，主要是用来表示两个向量的相关程度（内积值越大，余弦值越大，相似度越高）。
+解释下图5.中的变量表示的意义，输入 $ A=[a_1, ....., a_n] $ ，每一个向量对应有一个$q^i, k^i, v^i $，其中q是query，k是key，v是value，是分别根据$ W^q\cdot{a^i}, W^k\cdot{a^i}, W^v\cdot{a^i} $得到的，而$ W^q, W^k, W^v$这三个就是模型要学习的参数，然后$ \alpha'_{i,j}=q^i\cdot{k^j}$ ，主要是用来表示两个向量的相关程度（内积值越大，余弦值越大，相似度越高）。
 
 最终，$b^i=\sum_{i} \alpha'_{i,j} \cdot v^i$，这里提示个小点，i是作为q，而j是作为k。
 
@@ -158,7 +150,7 @@ class AddNorm(nn.Module):
 
 ![image-20211201114859810](https://raw.githubusercontent.com/Mateguo1/Pictures/master/img/image-20211201114859810.png)
 
-<center color:#C0C0C0;text-decoration:underline">图5. Scaled Dot-Product Attention</center> 
+<center style="color:#C0C0C0;text-decoration:underline">图6. Scaled Dot-Product Attention</center> 
 
 公式表示为：$ Attention(Q, K, V) = softmax(\frac{QK^T}{\sqrt{d_k}})V $
 
@@ -168,15 +160,15 @@ class AddNorm(nn.Module):
 
 ![image-20211201115801372](https://raw.githubusercontent.com/Mateguo1/Pictures/master/img/image-20211201115801372.png)
 
-<center color:#C0C0C0;text-decoration:underline">图6. Multi-Head Attention</center> 
+<center style="color:#C0C0C0;text-decoration:underline">图7. Multi-Head Attention</center> 
 
-至于transformer中的Mutil-Head Aattention，也很简单，图6.是原论文中的结构，这里说明下用它的一个原因，因为Scaled Dot-Product Attention说白了，没有可以学习的参数，只是通过点积来计算，因此为了提升模型对不同问题的特征进行分析的能力，就用了不同的线性映射，而最后所有线性映射再进行并行运算，原文中是用了8 heads。
+至于transformer中的Mutil-Head Aattention，也很简单，图7. 是原论文中的结构，这里说明下用它的一个原因，因为Scaled Dot-Product Attention说白了，没有可以学习的参数，只是通过点积来计算，因此为了提升模型对不同问题的特征进行分析的能力，就用了不同的线性映射，而最后所有线性映射再进行并行运算，原文中是用了8 heads。
 
 ![image-20211130221216612](https://raw.githubusercontent.com/Mateguo1/Pictures/master/img/image-20211130221216612.png)
 
-<center color:#C0C0C0;text-decoration:underline">图7. 2 heads</center> 
+<center style="color:#C0C0C0;text-decoration:underline">图8. 2heads</center> 
 
-图7. 是2 heads的例子，其实就是将$q^i, k^i, v^i $以及 $b^i$ 变成了$q^{i,k}, k^{i,k}, v^{i,k}, b^{i,k}$，下面是具体实现的代码：
+图8. 是2 heads的例子，其实就是将$q^i, k^i, v^i $以及 $b^i$ 变成了$q^{i,k}, k^{i,k}, v^{i,k}, b^{i,k}$，下面是具体实现的代码：
 
 ```python
 class MultiHeadAttention(nn.Module):
@@ -333,17 +325,23 @@ class TransformerEncoder(d2l.Encoder):
 
 #### 1.4.1 Masked Multi-Head Attention：
 
-首先来看，其中的Masked Multi-Head Attention，对比下图attention和下下图所示的Masked attention其实很简单，因为当前的输入是有序列的$a^i$，而原始self-attention的操作产生$b^i$时，会考虑所有的$a^i$，Masked attention是不再考虑包括$a^{i+1}$在内的右边的输入。
+首先来看，其中的Masked Multi-Head Attention，对比9. attention和图10. 所示的Masked attention其实很简单，因为当前的输入是有序列的$a^i$，而原始self-attention的操作产生$b^i$时，会考虑所有的$a^i$，Masked attention是不再考虑包括$a^{i+1}$在内的右边的输入。
 
 ![image-20211130224248288](https://raw.githubusercontent.com/Mateguo1/Pictures/master/img/image-20211130224248288.png)
 
+<center style="color:#C0C0C0;text-decoration:underline">图9. Self Attention</center> 
+
 ![image-20211130223714932](https://raw.githubusercontent.com/Mateguo1/Pictures/master/img/image-20211130223714932.png)
+
+<center style="color:#C0C0C0;text-decoration:underline">图10. Masked Self Attention</center> 
 
 #### 1.4.2 ：
 
 ![Transformer_2](https://raw.githubusercontent.com/Mateguo1/Pictures/master/img/Transformer_2.jpg)
 
-来看下上图中的很模糊的框框里面输入来源的对比吧，可以发现在decoder和encoder很相似那部分的输入实际来源是两个的，它的左边输入的key和value是来自于encoder输出，而右边输入的query是来自于decoder第一部分的输出，其实对比另外两个模块的self-attention的q、k、v都是来源于自己的输入而言，这个或许可以不叫成self-attention了。
+<center style="color:#C0C0C0;text-decoration:underline">图0. Transformer</center> 
+
+对比看下图0. 中的很模糊的红色框框部分的输入来源的，可以发现在decoder与encoder很相似那部分的输入实际来源是两个，它的左边输入的key和value是来自于encoder输出，而右边输入的query是来自于decoder第一部分的输出，其实对比另外两个模块的self-attention的q、k、v都是来源于自己的输入而言，这个或许可以不叫成self-attention了。
 
 ```python
 class DecoderBlock(nn.Module):
