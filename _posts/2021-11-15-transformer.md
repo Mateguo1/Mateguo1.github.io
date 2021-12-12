@@ -15,6 +15,11 @@ keywords: deep-learning
 
 ![Transformer_0](https://raw.githubusercontent.com/Mateguo1/Pictures/master/img/Transformer_0.jpg)
 
+```html
+<center style="font-size:14px;color:#C0C0C0;text-decoration:underline">图1.title1<sup>[1]</center> 
+```
+
+
 <center color:#C0C0C0;text-decoration:underline">图0.Transformer模型结构</center> 
 
 ## 1. Transformer：
