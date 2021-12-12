@@ -35,6 +35,10 @@ keywords: deep-learning
 
 ![图1-1](https://raw.githubusercontent.com/Mateguo1/Pictures/master/img/image-20211130221911379.png)
 
+```html
+<center style="font-size:14px;color:#C0C0C0;text-decoration:underline">图1.title1<sup>[1]</center> 
+```
+
 首先Add Norm，这两步操作可以通过下图来展示，分别为residual和layer normalization。
 
 ![image-20211130222242028](https://raw.githubusercontent.com/Mateguo1/Pictures/master/img/image-20211130222242028.png)
