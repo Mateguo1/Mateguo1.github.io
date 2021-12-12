@@ -7,20 +7,15 @@ keywords: deep-learning
 
 # Transformer:
 
-今天新开一个坑（虽然之前好多坑都没填完，哈哈哈哈），首先《Attention Is All You Need》论文链接：<a href="https://arxiv.org/pdf/1706.03762.pdf"></a>。
+今天新开一个坑（虽然之前好多坑都没填完，哈哈哈哈），首先论文链接：<a href="https://arxiv.org/pdf/1706.03762.pdf">《Attention is All You Need》</a>。
 
-接下来，先整理下李宏毅老师的ML课上讲的transformer，课件链接：https://speech.ee.ntu.edu.tw/~hylee/ml/ml2021-course-data/seq2seq_v9.pdf，然后这部分主要是针对我听完课程之后的一些个人的思路总结，顺序上可能和课件不太一样，因此还是很建议大家直接去看课程视频，讲的太好了！（ps：由于是学习总结，所以会借用大量李老师课件里的图），下面整理的理论部分主要是参考李宏毅老师的，而代码部分主要用到了李沐老师的动手深度学习的内容，网址为：https://d2l.ai/index.html。
+接下来，先整理下李宏毅老师的ML课上讲的transformer，<a href="https://speech.ee.ntu.edu.tw/~hylee/ml/ml2021-course-data/seq2seq_v9.pdf">课件链接</a>，然后这部分主要是针对我听完课程之后的一些个人的思路总结，顺序上可能和课件不太一样，因此还是很建议大家直接去看课程视频，讲的太好了！（ps：由于是学习总结，所以会借用大量李老师课件里的图），下面整理的理论部分主要是参考李宏毅老师的，而代码部分主要用到了李沐老师的动手深度学习的内容，这是<a href="https://d2l.ai/index.html">网址</a>。
 
 按惯例，直接来吧，先上网络结构，图0.是原论文中给出的模型结构，其中可以主要分为encoder和decoder，然后还有一个Input Embedding和Positional Encoding，下面就简单的梳理一下Transformer的整体思路和相关内容。
 
 ![Transformer_0](https://raw.githubusercontent.com/Mateguo1/Pictures/master/img/Transformer_0.jpg)
 
-```html
-<center style="font-size:14px;color:#C0C0C0;text-decoration:underline">图1.title1<sup>[1]</center> 
-```
-
-
-<center color:#C0C0C0;text-decoration:underline">图0.Transformer模型结构</center> 
+<center style="color:#C0C0C0;text-decoration:underline">图0.Transformer模型结构</center> 
 
 ## 1. Transformer：
 
@@ -68,7 +63,7 @@ $$ p_{i,2j}=sin(\frac{i}{100000^{2j/d}}) \\ p_{i,2j+1}=cos(\frac{i}{100000^{2j/d
 
 ![image-20211130215448550](https://raw.githubusercontent.com/Mateguo1/Pictures/master/img/image-20211130215448550.png)
 
-<center style="color:#C0C0C0;text-decoration:underline">图1.Transformer</center>
+<center style="color:#C0C0C0;text-decoration:underline">图1.Encoder Block</center>
 
 首先，从图1.的整体上来看Encoder结构，很明显可以看它前面是有一个N×（论文里面是用的N=6），而这N个Encoder的结构是一样的，但是其中的参数是不一样的，从图2.中可以看到一个Encoder Block的结构分解为右半部分那样。
 
@@ -252,7 +247,7 @@ class PositionWiseFFN(nn.Module):
 
 ![image-20211130215448550](https://raw.githubusercontent.com/Mateguo1/Pictures/master/img/image-20211130215448550.png)
 
-<center color:#C0C0C0;text-decoration:underline">图1.Encoder Block</center> 
+<center style="color:#C0C0C0;text-decoration:underline">图1.Encoder Block</center> 
 
 对比上面的图1. 来理解下面的代码吧
 
@@ -319,7 +314,7 @@ class TransformerEncoder(d2l.Encoder):
 
 ![Transformer_1](https://raw.githubusercontent.com/Mateguo1/Pictures/master/img/Transformer_1.jpg)
 
-<center color:#C0C0C0;text-decoration:underline">图0. Transformer</center> 
+<center style="color:#C0C0C0;text-decoration:underline">图0. Transformer</center> 
 
 其实从图0. 中，可以看出decoder的结构貌似和encoder有一部分很像，只是下面多了框框中的部分，Masked Multi-Head Attention + Add&Norm，下面来讲下这部分。
 
