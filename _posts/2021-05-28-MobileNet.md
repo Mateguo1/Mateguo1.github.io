@@ -1,9 +1,9 @@
 ---
 layout: post
 title: MobileNet
-categories: CNN
+categories: Neural Network
 description: MobileNet
-keywords: CV, CNN
+keywords: Neural Network, MobileNet
 ---
 
 # MobileNet：
