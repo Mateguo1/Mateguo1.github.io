@@ -1,9 +1,9 @@
 ---
 layout: post
 title: MobileNet
-categories: Neural Network
+categories: Neural_Network
 description: MobileNet
-keywords: Neural Network, MobileNet
+keywords: Neural_Network, MobileNet
 ---
 
 # MobileNet：
@@ -92,7 +92,7 @@ MobileNet V3在2019年由Google团队提出，它保留了前两代的DW卷积�
 
 更改后的block结构和V2 中的对比如下图所示：
 
-![image-20211218230336334](C:\Users\HP\AppData\Roaming\Typora\typora-user-images\image-20211218230336334.png)
+![image-20211218230336334](https://s2.loli.net/2021/12/18/yj9UTWmrQKRw8gJ.png)
 
 插一句：注意力机制借鉴了我们通过眼睛在观察事物的时候，往往会聚焦在某些物体上，从而过滤掉一些无用的信息，因此注意力机制的作用就是通过调整每个通道的权重不同，从而实现对输入数据的每个部位的关注度不同，从而提高模型对关键特征的识别能力，我不太确定这个注意力是不是起源于Transformer，其应用位置如下图所示：
 
