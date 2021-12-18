@@ -88,7 +88,7 @@ MobileNet V3在2019年由Google团队提出，它保留了前两代的DW卷积�
 
 ![image-20211218230137992](https://s2.loli.net/2021/12/18/P3jfXc2lyubpMJC.png)
 
-## Bneck:
+### 3.1 Bneck:
 
 更改后的block结构和V2 中的对比如下图所示：
 
@@ -104,7 +104,7 @@ MobileNet V3在2019年由Google团队提出，它保留了前两代的DW卷积�
 
 其中用到的新的激活函数hard-sigmoid，公式为：$ hard-sigmoid(x)=\frac{ReLU6(X+3)}{6}$
 
-## Last Stage:
+### 3.2 Last Stage:
 
 简化前后对比，清楚看到其中减少了层结构，最终的效果能够减少模型运行的时间为7ms大约占据一次运行时间的11%：
 
