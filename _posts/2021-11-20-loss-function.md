@@ -2,6 +2,7 @@
 layout: post
 title: Loss function for semantic detection 
 description: deep-learning
+categories: learning
 keywords: loss function
 ---
 

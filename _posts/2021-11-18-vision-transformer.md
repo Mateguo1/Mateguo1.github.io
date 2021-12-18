@@ -2,6 +2,7 @@
 layout: post
 title: Vision Transformer
 description: deep-learning
+categories: Neural_Network
 keywords: deep-learning
 ---
 
