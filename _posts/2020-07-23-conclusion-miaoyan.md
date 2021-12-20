@@ -1,7 +1,7 @@
 ---
 layout: post
 title: miaoyan
-categories: fore-end
+categories: Recording
 description: A conclusion ror the miaoyan project
 keywords: 喵眼
 ---
