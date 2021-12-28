@@ -35,7 +35,7 @@ from d2l import torch as d2l
 
 ### 1.2 Positional Encoding：
 
-由于Transformer是为了处理机器翻译的，这个数据内部是包含时序关系的，而self-attention对比RNN（在模型内，考虑到前面输入部分的特征）而言是考虑不到数据的时序关系，因此Transformer使用了positional encoding，也就是在进入Encoder部分前，在输入中加入时序关系，下面代码描述的是基于正弦函数、余弦函数的固定位置编码。
+由于Transformer是为了处理机器翻译的，这个数据内部是包含时序关系的，而self-attention对比RNN（在模型内，考虑到前面输入部分的特征）而言是考虑不到数据的时序关系，因此Transformer使用了positional encoding，也就是在进入Encoder部分前，在输入中加入时序关系，说白了经过没有位置编码的SE而言，**你好啊**和**啊好你**，好得到的新向量是一样的。下面代码描述的是基于正弦函数、余弦函数的位置编码（vanilla）。
 
 ```python
 class PositionalEncoding(nn.Module):
@@ -59,6 +59,8 @@ class PositionalEncoding(nn.Module):
 输入为X，位置编码使用形状相同的位置嵌入矩阵P，输出X+P，而P矩阵上的第i行、第2j列和2j+1列上的元素公式表示为，其中行代表词元在序列中的位置，而列代表位置编码的不同维度：
 
 $$ p_{i,2j}=sin(\frac{i}{100000^{2j/d}}) \\ p_{i,2j+1}=cos(\frac{i}{100000^{2j/d}})$$
+
+至于这里为什么加上PE而不是concat，我也不是非常清楚，现在大概理解了两个点（1）concat之后还是要进行线性变换的，所以最后作用还是变成了相加；（2）因为有残差链接，所以位置编码的信息不会消失。
 
 ### 1.3 Encoder：
 
@@ -136,9 +138,9 @@ class AddNorm(nn.Module):
 
 <center style="color:#C0C0C0;text-decoration:underline">图5. Self-attention</center> 
 
-解释下图5.中的变量表示的意义，输入 $ A=[a_1, ....., a_n] $ ，每一个向量对应有一个$q^i, k^i, v^i $，其中q是query，k是key，v是value，是分别根据$ W^q\cdot{a^i}, W^k\cdot{a^i}, W^v\cdot{a^i} $得到的，而$ W^q, W^k, W^v$这三个就是模型要学习的参数，然后$ \alpha'_{i,j}=q^i\cdot{k^j}$ ，主要是用来表示两个向量的相关程度（内积值越大，余弦值越大，相似度越高）。
+解释下图5.中的变量表示的意义，输入 $ A=[a_1, ....., a_n] $ ，每一个向量对应有一个$q^i, k^i, v^i $，其中q是query，k是key，v是value，是分别根据$ W^q\cdot{a^i}, W^k\cdot{a^i}, W^v\cdot{a^i} $得到的，而$ W^q, W^k, W^v$这三个就是模型要学习的参数，然后$ \alpha'_{i,j}=softmax(q^i\cdot{k^j})$ ，主要是用来表示两个向量的相关程度（内积值越大，余弦值越大，相似度越高）。
 
-最终，$b^i=\sum_{i} \alpha'_{i,j} \cdot v^i$，这里提示个小点，i是作为q，而j是作为k。
+最终，$b^i=\sum_{i} \alpha'_{i,j} \cdot v^i$，这里说个我的小理解，i是作为q，而j是作为k。
 
 最后的公式为：$Attention(Q,K,V)=QK^TV$
 
