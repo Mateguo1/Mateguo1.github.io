@@ -1,9 +1,9 @@
 ---
 layout: post
 title: ResNet
-categories: Neural_Network
+categories: Basic Model
 description: ResNet
-keywords: Neural Network, ResNet
+keywords: NN, ResNet
 
 ---
 
