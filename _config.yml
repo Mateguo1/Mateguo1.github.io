@@ -102,7 +102,7 @@ markdown: kramdown
 kramdown:
     input: GFM
 highlighter: rouge
-paginate: 10
+paginate: 15
 lsi: false
 quiet: false
 excerpt_separator: "\n\n"
@@ -157,7 +157,7 @@ simple_jekyll_search:
     # 是否支持全文搜索
     fulltext: false
     # 最多显示多少条搜索结果
-    limit: 10
+    limit: 15
 
 # ---------------- #
 #      Google      #
