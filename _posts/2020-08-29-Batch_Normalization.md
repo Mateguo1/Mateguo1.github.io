@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Inception
+title: Batch_Normalization
 categories: DL
-description: Inception
-keywords: NN, Inception
+description: Batch_Normalization
+keywords: NN, Batch_Normalization
 ---
 
 # Batch Normalization：
