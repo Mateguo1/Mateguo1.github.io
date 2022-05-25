@@ -8,7 +8,7 @@ keywords: NN, Batch_Normalization
 
 # Batch Normalization：
 
-这里是原论文的链接： <a url="https://proceedings.mlr.press/v37/ioffe15.pdf">Batch Normalization</a>。
+这里是原论文的链接： <a href="https://proceedings.mlr.press/v37/ioffe15.pdf">Batch Normalization</a>。
 
 ## 1. Batch Normalization：
 
