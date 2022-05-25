@@ -23,7 +23,7 @@ device = 'cuda' if torch.cuda.is_available() else 'cpu'
 img = image.to(device)
 ```
 
-## 1. 翻转：
+## 1. 图像翻转：
 
 ### 1.1 上下翻转：
 
@@ -41,7 +41,9 @@ flip_aug = torchvision.transforms.RandomVerticalFlip(p=0.8)
 flip_aug(img)
 ```
 
-## 2. 裁剪：
+------
+
+## 2. 图像裁剪：
 
 ```python
 # size：裁剪后的高宽被缩放到固定像素值
@@ -52,7 +54,9 @@ shape_aug = torchvision.transforms.RandomResizedCrop(
 shape_aug(img)
 ```
 
-## 3. 改变颜色：
+------
+
+## 3. 图像颜色：
 
 ### 3.1 亮度：
 
@@ -90,6 +94,8 @@ color_aug = torchvision.transforms.ColorJitter(
 color_aug(img)
 ```
 
+------
+
 ## 4. 混合使用：
 
 ```python
@@ -97,6 +103,8 @@ augs = torchvision.transforms.Compose([
     flip_aug, color_aug, shape_aug])
 augs(img)
 ```
+
+------
 
 ## 5. 训练模型时使用：
 
