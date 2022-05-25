@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Image_Augmentation
+title: Image Augmentation
 categories: Image
 keywords: method
 ---

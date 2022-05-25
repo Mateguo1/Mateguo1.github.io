@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Batch_Normalization
+title: Batch Normalization
 categories: DL
 description: Batch_Normalization
 keywords: NN, Batch_Normalization
