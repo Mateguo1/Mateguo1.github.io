@@ -8,7 +8,7 @@ keywords: NN, Batch_Normalization
 
 # Batch Normalization：
 
-这里是原论文的链接： <a href="https://proceedings.mlr.press/v37/ioffe15.pdf">Batch Normalization</a>。
+论文链接： <a href="https://proceedings.mlr.press/v37/ioffe15.pdf">Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift</a>。
 
 ## 1. Batch Normalization：
 
