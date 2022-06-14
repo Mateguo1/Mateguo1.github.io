@@ -71,7 +71,7 @@ $$\begin{align}
 ### 1.4 Relative Position Bias：
 
 在计算自注意力的时候，加入了相对位置偏移，从而能够有效提升模型的效果。公式如下：
-$$
-Attention(Q,K,V)=SoftMax(\frac{QK^T}{\sqrt{d}}+B)V
-$$
+
+$$Attention(Q,K,V)=SoftMax(\frac{QK^T}{\sqrt{d}}+B)V$$
+
 然后文章针对上述结构进行了大量的消融实验，这些等之后再补充。
