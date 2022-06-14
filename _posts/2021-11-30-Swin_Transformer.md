@@ -37,15 +37,16 @@ keywords: deep-learning
 然后再进入这个模块，其结构如下图所示，然后具体的顺序可以结合下图和公式来理解，也不算很复杂，相比于之前ViT中的内容，比较陌生的是W-MSA，下面会详细整理下，其他内容就不再详细展开了，可以参考我之前的博文<a href="https://mateguo1.github.io/2021/11/18/ViT/">Vision Transformer</a>。
 
 <img src="https://raw.githubusercontent.com/Mateguo1/Pictures/master/img/image-20220613163923065.png" alt="image-20220613163923065" style="zoom:50%;" />
-$$
-\hat{z}^l = W\mbox{-}MSA(LN(z^{l-1}))+z^{l-1}
+
+$$\begin{align}
+&\hat{z}^l = W\mbox{-}MSA(LN(z^{l-1}))+z^{l-1}
 \\
-z^l = MLP(LN(\hat{z}^l))+z^l
+&z^l = MLP(LN(\hat{z}^l))+z^l
 \\
-\hat{z}^{l+1}=SW\mbox{-}MSA(LN(z^l))+z^l
+&\hat{z}^{l+1}=SW\mbox{-}MSA(LN(z^l))+z^l
 \\
-z^{l+1}=MLP(LN(\hat{z}^{l+1}))+\hat{z}^{l+1}
-$$
+&{l+1}=MLP(LN(\hat{z}^{l+1}))+\hat{z}^{l+1}
+\end{align}$$
 
 #### 1.3.1 (S)W-MSA：
 
@@ -54,11 +55,13 @@ $$
 ![img](https://miro.medium.com/max/1400/1*XbTV-X6eZ8iXEvhsl04N8Q.gif)
 
 首先来看静态的W-MSA，为了有效的建模，作者提出W-MSA，也就是在不重合的窗口中计算自注意力，每一个窗口含有$M\times M$（默认值为7）个patch，然后用公式对比下MSA（这里的计算，在<a href="https://mateguo1.github.io/2021/11/15/transformer/">Transformer</a>有详细讲解，或者可以参考这篇文章内容，<a href="https://blog.csdn.net/Jeremy_lf/article/details/115874662">深度学习之NLP学习笔记（七）— Transformer复杂度分析</a>），二者的计算量（这里忽略了Softmax的复杂度）：
-$$
-\Omega(MSA)=4hwC^2+2(hw)^2C
+
+$$\begin{align}
+&\Omega(MSA)=4hwC^2+2(hw)^2C
 \\
-\Omega(W-MSA)=4hwC^2+2M^2hwC
-$$
+&\Omega(W-MSA)=4hwC^2+2M^2hwC
+\end{align}$$
+
 ![img](https://miro.medium.com/max/1400/1*qJ6egEhj-KtW1MAJ-sxwxQ.gif)
 
 而动态的（严格来讲也不算动态，这样说比较方便理解）SW-MSA，则是将窗口向着右下角移动，因此就会产生尺寸小于$M\times M$的patch，因此就要将这些patch移动去填补空缺。
