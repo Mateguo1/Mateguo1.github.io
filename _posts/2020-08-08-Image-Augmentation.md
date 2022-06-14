@@ -5,9 +5,11 @@ categories: Image
 keywords: method
 ---
 
-# 图像增广：
+# Image Augmentation：
 
-图像增广通过对训练图像进行一系列的随机变化后，生成相似而不同的训练数据，从而增大训练集。此外，通过随即改变训练样本，还可以提高模型泛化能力。下面就总结Pytorch中几个常用的方法：
+AlexNet中使用了图像增广（Image Augmentation）来获得更好的训练结果，该方法是通过使训练图像进行一系列的随机变化后，生成相似而不同的训练数据，从而增大训练集。此外，通过随即改变训练样本，还可以提高模型泛化能力。
+
+下面就总结Pytorch中几个常用的方法：
 
 ```python
 import torch

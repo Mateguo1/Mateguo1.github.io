@@ -14,13 +14,25 @@ MobileNet是2017年由Google团队提出的一种专注于嵌入式、移动端�
 
 ## 1. MobileNet V1：
 
+分解卷积：
+
+深度可分卷积，Depthwise separable convolution
+
+主要思想：将卷积的滤波和结合功能，分别通过深度卷积和点卷积来实现，从而减少模型计算量和参数大小
+
+宽度乘数，width multiplier，$\alpha$，(0,1]，控制feature map的channel数
+
+分辨率乘数，resolution multiplier，$\rho$，(0,1]，控制input的尺寸（长宽）
+
+
+
 下图是原论文中给出的网络结构，V1 主要是使用了深度可分卷积DW和超参数α、β。
 
 ![image-20211218221516179](https://s2.loli.net/2021/12/18/hgRqKxFW92riJsP.png)
 
-### 1.1 深度可分卷积 DW：
+### 1.1 深度可分卷积：
 
-MobileNet V1通过使用深度可分卷积，有效的减少了模型运算过程参数数目，下面进行常规卷积和DW卷积之间的参数运算量对比，假设二者输入均为RGB图像，输出channel=4。
+MobileNet V1使用深度可分卷积（Depthwise Separable Convolution），使用分解卷积的思想，将卷积的滤波和结合功能，分别通过深度卷积和点卷积来实现，有效的减少了模型运算过程参数数目，下面进行常规卷积和DW卷积之间的参数运算量对比，假设二者输入均为RGB图像，输出channel=4。
 
 下图为常规卷积，参数计算量为：3×3×3×4=108。
 
@@ -36,23 +48,29 @@ DW卷积分为两步进行，首先是下图所示的Depthwise convolution，也
 
 ![image-20210525085320164](https://s2.loli.net/2021/12/18/7JxUBXTWhsItoqR.png)
 
-最终两部分参数计算量合起来为39，远小于常规卷积的108
+最终两部分参数计算量合起来为39，远小于常规卷积的108。
 
-### 1.2 超参数α、β：
+### 1.2 超参数：
 
-首先来把整个卷积计算的公式写出来，这里为了显示方便，我将对应变量含义都标注到了常规卷积的图片上。 ![image-20210525085320164](https://mateguo1.github.io/assets/img/%E8%A7%A3%E9%87%8A.png)
+主要目的是为了实现更小、计算代价更少的模型。
 
-就能退出来DW卷积的参数计算公式为：$ D_k\cdot D_k\cdot M\cdot D_F\cdot D_F+M\cdot N\cdot D_F\cdot D_F$，其中$D_k, D_F$分别为卷积核尺寸和输入图像尺寸。
+#### 1.2.1 ：宽度乘数：
 
-α指的是**宽度乘子（ Width Multiplier ）**，主要是为了更小、计算代价更少的模型，其取值范围为 (0,1]，将输入channel为$ \alpha M$，输出channel变为$ \alpha N$。
+这里为了显示方便，我将对应变量含义都标注到了常规卷积的图片上。 ![image-20210525085320164](https://mateguo1.github.io/assets/img/%E8%A7%A3%E9%87%8A.png)
 
-DW卷积的参数计算公式为：$ D_k\cdot D_k\cdot \alpha M\cdot D_F\cdot D_F+\alpha M\cdot \alpha N\cdot D_F\cdot D_F$，原论文中的对比试验效果如下图所示，网络结构前面的小数就是宽度乘子。
+就能推算出DW卷积的参数计算公式为：$ D_k\cdot D_k\cdot M\cdot D_F\cdot D_F+M\cdot N\cdot D_F\cdot D_F$，其中$D_k、D_F$分别为卷积核尺寸和输入图像尺寸。
+
+而宽度乘数$\alpha$（width multiplier），取值范围为(0,1]，主要作用就是来控制feature map的channel数，将输入channel为$ \alpha M$，输出channel变为$ \alpha N$。
+
+因此加入后，DW卷积的参数计算公式就变为：$ D_k\cdot D_k\cdot \alpha M\cdot D_F\cdot D_F+\alpha M\cdot \alpha N\cdot D_F\cdot D_F$，原论文中的对比试验效果如下图所示，网络结构前面的小数就是宽度乘子。
 
 ![image-20210528205109391](https://s2.loli.net/2021/12/18/gulL53Xawid6f9U.png)
 
-β指的是**简式显示（ Reduced Representation ）**，其取值范围为 (0,1]，通过改变输入图像的尺寸，来减少神经网络的计算代价，因此输入尺寸由$ \beta D_F$。
+#### 1.2.2 分辨率乘数：
 
-DW卷积的参数计算公式变为：$ D_k\cdot D_k\cdot \alpha M\cdot \beta D_F\cdot \beta D_F+M\cdot \alpha N\cdot \beta D_F\cdot \beta D_F$，原论文中的对比试验效果如下图所示，网络结构后面不同的数字就是变化后的输入尺寸。
+分辨率乘数$\rho$（resolution multiplier），取值范围也是(0,1]，通过改变输入图像的尺寸，来减少神经网络的计算代价，因此输入尺寸由$ \beta D_F$。
+
+加入后，  DW卷积的参数计算公式变为：$ D_k\cdot D_k\cdot \alpha M\cdot \beta D_F\cdot \beta D_F+M\cdot \alpha N\cdot \beta D_F\cdot \beta D_F$，原论文中的对比试验效果如下图所示，网络结构后面不同的数字就是变化后的输入尺寸。
 
 ![image-20210528205109391](https://s2.loli.net/2021/12/18/ypmonvDbC9gUHTG.png)
 
@@ -66,7 +84,9 @@ DW卷积的参数计算公式变为：$ D_k\cdot D_k\cdot \alpha M\cdot \beta D_
 
 ![image-20210528211607757](https://s2.loli.net/2021/12/18/tOfh4qWa2B5YdQ8.png)
 
-上图所示为残差模块和逆残差模块之间的对比，二者每一层的对比如下，这个如果大家熟悉ResNet的话，会发现BottleNeck结构很相似，然后再把里面3×3的常规卷积替换一下就成，至于这里怎么升维，上面网络结构图中的t就是膨胀系数，膨胀后的channel = channel_in*t。
+上图所示为残差模块和逆残差模块之间的对比，二者每一层的对比如下表。如果大家熟悉残差模块的话，会发现BottleNeck结构很相似，然后再把里面3×3的常规卷积替换为了深度可分卷积。
+
+至于逆残差结构中，通过模块中的第一个卷积操作，可以发现feature map深度增加了，也就是实现了升维，而这是通过上面网络结构表中的 膨胀系数$t$ 实现的，膨胀后的通道数变为$ channel\_in \times t$。
 
 | Residual block | Inverted residual block |
 | :------------: | :---------------------: |
@@ -74,13 +94,11 @@ DW卷积的参数计算公式变为：$ D_k\cdot D_k\cdot \alpha M\cdot \beta D_
 |    3×3卷积     |         3×3卷积         |
 |  1×1卷积升维   |       1×1卷积降维       |
 
-逆残差结构引入了ReLU6，其公式为：$ReLU(x) = min(max(0,x),6)$。
-
-其与ReLU之间的对比，直观展示如下：
+逆残差结构还引入了ReLU6，其公式为：$ReLU(x) = min(max(0,x),6)$。其与ReLU之间的对比，直观展示如下：
 
 ![img](https://s2.loli.net/2021/12/18/xch9yBigGLbk4av.jpg)
 
-此外，有线性瓶颈的逆残差结构的最后一层的激活函数替换为了线性激活函数。（这里我给忘了具体是啥了，光记得原文是给了一个实验对比，等我之后再去瞅瞅），V3的代码里是用了Identity，也就是y=x。
+此外，有线性瓶颈的逆残差结构的最后一层的激活函数替换为了线性激活函数。（这里原文是给了一个实验对比，但我理解不是很透彻，先不详细展开了，等我之后再去瞅瞅），V3的代码里是用了线性映射。
 
 ## 3. MobileNet V3：
 

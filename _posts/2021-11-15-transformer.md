@@ -8,13 +8,13 @@ keywords: Neural Network, U-Net
 
 # Transformer:
 
-今天新开一个坑（虽然之前好多坑都没填完，哈哈哈哈），首先《Attention is All You Need》<a href="https://arxiv.org/pdf/1706.03762.pdf">论文链接</a>。
+今天新开一个坑（虽然之前好多坑都没填完，哈哈哈哈），论文链接<a href="https://arxiv.org/pdf/1706.03762.pdf">Attention is All You Need</a>。
 
-接下来，先整理下李宏毅老师的ML课上讲的transformer，<a href="https://speech.ee.ntu.edu.tw/~hylee/ml/ml2021-course-data/seq2seq_v9.pdf">课件链接</a>，然后这部分主要是针对我听完课程之后的一些个人的思路总结，顺序上可能和课件不太一样，因此还是很建议大家直接去看课程视频，讲的太好了！（ps：由于是学习总结，所以会借用大量李老师课件里的图），下面整理的理论部分主要是参考李宏毅老师的，而代码部分主要用到了李沐老师的动手深度学习的内容，这是<a href="https://d2l.ai/index.html">对应链接</a>。
+接下来，先整理下李宏毅老师的ML课上讲的transformer，<a href="https://speech.ee.ntu.edu.tw/~hylee/ml/ml2021-course-data/seq2seq_v9.pdf">课件链接</a>，然后这部分主要是课后的一些个人的思路总结，顺序上可能和课件不太一样，因此还是很建议大家直接去看课程视频，讲的太好了！（ps：由于是学习总结，所以会借用大量李老师课件里的图），下面整理的理论部分主要是参考李宏毅老师的，而代码部分主要用到了李沐老师的动手深度学习的内容，这是<a href="https://d2l.ai/index.html">对应链接</a>。
 
 按惯例，直接来吧，先上网络结构，图0.是原论文中给出的模型结构，其中可以主要分为encoder和decoder，然后还有一个Input Embedding和Positional Encoding，下面就简单的梳理一下Transformer的整体思路和相关内容。
 
-![Transformer_0](https://raw.githubusercontent.com/Mateguo1/Pictures/master/img/Transformer_0.jpg)
+<img src="https://raw.githubusercontent.com/Mateguo1/Pictures/master/img/Transformer_0.jpg" alt="Transformer_0" style="zoom: 86%;" />
 
 <center style="color:#C0C0C0;text-decoration:underline">图0.Transformer模型结构</center> 
 
