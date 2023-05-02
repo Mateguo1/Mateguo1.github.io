@@ -10,7 +10,9 @@ keywords: deep-learning
 
 继续，这篇来整理下Swin Transformer的相关知识。论文链接：<a href="">Swin Transformer: Hierarchical Vision Transformer using Shifted Windows</a>，再顺便给出一篇文章，用动图详细地解释了其中的原理，很值得一看，<a href='https://towardsdatascience.com/a-comprehensive-guide-to-swin-transformer-64965f89d14c'>A Comprehensive Guide to Microsoft’s Swin Transformer</a>。
 
-将Transformer从语言处理领域运用到视觉领域的两个挑战：（1）相较于词向量固定的尺寸，图像的尺寸则会有较多的、较大的变化；（2）相较于文本，图像的分辨率较高，尤其像是在语义分割这种需要处理像素数据级别数据的任务中。
+将Transformer从语言处理领域运用到视觉领域的两个挑战：
+(1) 相较于文本中固定尺寸的词向量，图像的尺寸则会有较多的、较大的变化；
+(2) 相较于文本，图像的分辨率较高（数据量），尤其像是在语义分割这种需要处理像素数据级别数据的任务中。
 
 之前的ViT有一些弊端，像是需要较大的训练集来实现较好的效果，以及它的结构不是很适合用作密集预测任务的基础网络（或者是处理的图像分辨率较高，因为运算量会按照图像尺寸的次方级增加）。
 
@@ -25,8 +27,6 @@ keywords: deep-learning
 首先经过这个模块，该模块和ViT的功能相同，每一个patch都被当作token来对待，论文中提到使用的patch size为4，因此每一个patch形状就是$4\times 4\times3$。
 
 ![img](https://miro.medium.com/max/1400/1*0MDU8PIJ-wS_fpz-48xGJQ.gif)
-
-
 
 ### 1.2 Linear Embedding Layer：
 

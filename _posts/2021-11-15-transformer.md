@@ -12,7 +12,7 @@ keywords: Neural Network, U-Net
 
 接下来，先整理下李宏毅老师的ML课上讲的transformer，<a href="https://speech.ee.ntu.edu.tw/~hylee/ml/ml2021-course-data/seq2seq_v9.pdf">课件链接</a>，然后这部分主要是课后的一些个人的思路总结，顺序上可能和课件不太一样，因此还是很建议大家直接去看课程视频，讲的太好了！（ps：由于是学习总结，所以会借用大量李老师课件里的图），下面整理的理论部分主要是参考李宏毅老师的，而代码部分主要用到了李沐老师的动手深度学习的内容，这是<a href="https://d2l.ai/index.html">对应链接</a>。
 
-按惯例，直接来吧，先上网络结构，图0.是原论文中给出的模型结构，其中可以主要分为encoder和decoder，然后还有一个Input Embedding和Positional Encoding，下面就简单的梳理一下Transformer的整体思路和相关内容。
+按惯例，直接来吧，先上网络结构，图0 是原论文中给出的模型结构，可以主要分为encoder和decoder，然后还有一个Input Embedding和Positional Encoding，下面就简单的梳理一下Transformer的整体思路和相关内容。
 
 <img src="https://raw.githubusercontent.com/Mateguo1/Pictures/master/img/Transformer_0.jpg" alt="Transformer_0" style="zoom: 86%;" />
 
@@ -31,7 +31,7 @@ from d2l import torch as d2l
 
 ### 1.1 Input Embedding：
 
-这个其实就是将每一个词变成了词向量。
+将每一个词变成词向量。
 
 ### 1.2 Positional Encoding：
 
@@ -68,13 +68,13 @@ $$ p_{i,2j}=sin(\frac{i}{100000^{2j/d}}) \\ p_{i,2j+1}=cos(\frac{i}{100000^{2j/d
 
 <center style="color:#C0C0C0;text-decoration:underline">图1.Encoder Block</center>
 
-首先，从图1.的整体上来看Encoder结构，很明显可以看它前面是有一个N×（论文里面是用的N=6），而这N个Encoder的结构是一样的，但是其中的参数是不一样的，从图2.中可以看到一个Encoder Block的结构分解为右半部分那样。
+首先，从图1.的整体上来看Encoder结构，分为两部分MHA和FFN，它前面有一个N×（重复N次，论文里面是用的N=6），而这N个Encoder的结构是一样的，但其中的参数不同，从图2.中可以看到一个Encoder Block的结构分解为右半部分那样。MHA<=>Self-attention; FFN<=>FCs
 
 ![图1-1](https://raw.githubusercontent.com/Mateguo1/Pictures/master/img/image-20211130221911379.png)
 
 <center style="color:#C0C0C0;text-decoration:underline">图2.Encoder Block</center> 
 
-而整体的Encoder Block实际上，首先Multi-Head Attention，然后是Add Norm，结构如图3.所示，分别为残差结构和层规范化，最后还包括一个Feed Forward，下面首先将分开讲解这三个部分，然后最后再结合起来说明整个Block的结构。
+再来按顺序说明下Encoder Block的结构，首先是Multi-Head Self-attention，然后是Add+Norm，结构如图3.所示，分别为Residual和Layer Norm，最后还包括一个Feed Forward Network，下面首先将分开讲解这三个部分，然后最后再结合起来说明整个Block的结构。
 
 ![image-20211130222242028](https://raw.githubusercontent.com/Mateguo1/Pictures/master/img/image-20211130222242028.png)
 
@@ -160,7 +160,7 @@ class AddNorm(nn.Module):
 
 <center style="color:#C0C0C0;text-decoration:underline">图7. Multi-Head Attention</center> 
 
-至于transformer中的Mutil-Head Aattention，也很简单，图7. 是原论文中的结构，这里说明下用它的一个原因，因为Scaled Dot-Product Attention说白了，没有可以学习的参数，只是通过点积来计算，因此为了提升模型对不同问题的特征进行分析的能力，就用了不同的线性映射，而最后所有线性映射再进行并行运算，原文中是用了8 heads。
+至于transformer中的Mutil-Head Aattention，也很简单，图7. 是原论文中的结构，这里说明下用它的一个原因，因为Scaled Dot-Product Attention没有可以学习的参数，只是通过点积来计算，因此为了提升模型对不同问题的特征进行分析的能力，就用了不同的线性映射，而最后所有线性映射再进行并行运算，原文中是用了8 heads。
 
 ![image-20211130221216612](https://raw.githubusercontent.com/Mateguo1/Pictures/master/img/image-20211130221216612.png)
 
@@ -323,7 +323,7 @@ class TransformerEncoder(d2l.Encoder):
 
 #### 1.4.1 Masked Multi-Head Attention：
 
-首先来看，其中的Masked Multi-Head Attention，对比9. attention和图10. 所示的Masked attention其实很简单，因为当前的输入是有序列的$a^i$，而原始self-attention的操作产生$b^i$时，会考虑所有的$a^i$，Masked attention是不再考虑包括$a^{i+1}$在内的右边的输入。
+首先来看，其中的Masked Multi-Head Attention，对比9. attention和图10. 所示的Masked attention就比较容易理解了，因为当前的输入是有序列的$a^i$，而原始self-attention的操作产生$b^i$时，会考虑所有的$a^i$，Masked attention是不再考虑包括$a^{i+1}$在内的右边的输入。
 
 ![image-20211130224248288](https://raw.githubusercontent.com/Mateguo1/Pictures/master/img/image-20211130224248288.png)
 
